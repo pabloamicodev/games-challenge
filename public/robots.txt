@@ -1,0 +1,11 @@
+# robots.txt for GamerShop
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /cart
+
+# Sitemap
+Sitemap: https://gamershop.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1

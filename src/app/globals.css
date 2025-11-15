@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+@theme {
+  --width-card-mobile: 327px;
+  --width-card-desktop: 380px;
+  --height-card: 436px;
+  --max-width-container: 1280px;
+  --gap-cards: 58px;
+}
+
+@layer utilities {
+  .max-w-container {
+    max-width: var(--max-width-container);
+  }
+  .w-card-mobile {
+    width: var(--width-card-mobile);
+  }
+  .w-card-desktop {
+    width: var(--width-card-desktop);
+  }
+
+  select:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  .h-card {
+    height: var(--height-card);
+  }
+  .gap-cards {
+    gap: var(--gap-cards);
+  }
+
+  /* Toast animations */
+  @keyframes slide-in {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-slide-in {
+    animation: slide-in 0.3s ease-out;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:w-card-desktop {
+    width: var(--width-card-desktop);
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:w-card-desktop {
+    width: var(--width-card-desktop);
+  }
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Screen Reader Only - Accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only:focus,
+.sr-only:active {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Focus visible for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid #00A8E8;
+  outline-offset: 2px;
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
