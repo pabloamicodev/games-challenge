@@ -1,0 +1,6 @@
+{
+  "cart": {
+    "useDrawer": false,
+    "description": "When true, cart opens as a drawer. When false, redirects to /cart page"
+  }
+}
